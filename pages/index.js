@@ -1,6 +1,9 @@
 import Head from 'next/head'
+import client from '../modules/contentfulClient'
 
-export default function Home() {
+export default function Home({ data }) {
+
+  console.log(data)
   return (
     <>
       <Head>
@@ -9,9 +12,23 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
+      <main>
         
       </main>
     </>
   )
+}
+
+
+export async function getServerSideProps() {
+  try {
+      const data = await client.getEntries({ content_type: 'test' })
+    
+      return { props: { data: data.items[0] } }
+  } catch (err) {
+      console.log(err)
+      return {
+          notFound: true
+      }
+  }
 }
