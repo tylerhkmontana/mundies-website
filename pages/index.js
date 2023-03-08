@@ -1,9 +1,9 @@
 import Head from 'next/head'
-import client from '../modules/contentfulClient'
+import Layout from '@/components/layout'
+import client from '@/modules/contentfulClient'
+import Img from '@/components/img'
 
 export default function Home({ data }) {
-
-  console.log(data)
   return (
     <>
       <Head>
@@ -12,9 +12,14 @@ export default function Home({ data }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        
-      </main>
+      <Layout page='Home'>
+        <p>
+          Welcome to MUNDIES WORLD! 
+        </p>
+        <div className='relative w-[400px] h-[600px]'>
+          <Img src='/mundies.png'/>
+        </div>
+      </Layout>
     </>
   )
 }
