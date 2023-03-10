@@ -12,21 +12,33 @@ export default function Nav({ page }) {
             <br/>
             <ul className='flex flex-col gap-4'>
                 <Link href='/'>
-                    <li><a className='hover:underline' style={{
+                    <li>
+                        <a 
+                        className='hover:underline' 
+                        style={{
                         textDecoration: page === 'Home' ? 'underline' : 'none'
-                    }}>Home</a></li>
+                        }}
+                        >Home</a></li>
                 </Link>
 
                 <Link href='/about'>
-                    <li><a className='hover:underline' style={{
+                    <li>
+                        <a 
+                        className='hover:underline' 
+                        style={{
                         textDecoration: page === 'About' ? 'underline' : 'none'
-                    }}>About</a></li>
+                        }}
+                        >About</a></li>
                 </Link>
 
                 <Link href='/cartoons'>
-                    <li><a className='hover:underline' style={{
+                    <li>
+                        <a 
+                        className='hover:underline' 
+                        style={{
                         textDecoration: page === 'Cartoons' ? 'underline' : 'none'
-                    }}>Cartoons</a></li>
+                        }}
+                        >Cartoons</a></li>
                 </Link>
             </ul>
         </nav>

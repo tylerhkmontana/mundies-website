@@ -3,7 +3,7 @@ import Nav from './nav'
 import Head from 'next/head'
 
 
-export default function Layout({ children, page, isVisible=true }) {
+export default function Layout({ children, page}) {
     const variants = {
         hidden: { opacity: 0 },
         enter: { opacity: 1 },
@@ -15,7 +15,7 @@ export default function Layout({ children, page, isVisible=true }) {
                 <title>{page}</title>
             </Head>
             <div className="container px-24 py-8 mx-auto flex gap-16">
-                <Nav page={page} isVisible={isVisible}/>
+                <Nav page={page}/>
                 <br/>
                 <br/>
                 <br/>
