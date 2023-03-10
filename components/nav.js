@@ -2,6 +2,7 @@ import Img from './img'
 import Link from 'next/link'
 
 export default function Nav({ page }) {
+
     return (
         <nav>
             <div className='relative w-24 h-12'>
@@ -12,33 +13,24 @@ export default function Nav({ page }) {
             <br/>
             <ul className='flex flex-col gap-4'>
                 <Link href='/'>
-                    <li>
-                        <a 
-                        className='hover:underline' 
-                        style={{
+                    <li style={{
                         textDecoration: page === 'Home' ? 'underline' : 'none'
-                        }}
-                        >Home</a></li>
+                    }}>
+                       Home</li>
                 </Link>
 
                 <Link href='/about'>
-                    <li>
-                        <a 
-                        className='hover:underline' 
-                        style={{
+                    <li style={{
                         textDecoration: page === 'About' ? 'underline' : 'none'
-                        }}
-                        >About</a></li>
+                    }}>
+                      About</li>
                 </Link>
 
                 <Link href='/cartoons'>
-                    <li>
-                        <a 
-                        className='hover:underline' 
-                        style={{
+                    <li style={{
                         textDecoration: page === 'Cartoons' ? 'underline' : 'none'
-                        }}
-                        >Cartoons</a></li>
+                    }}>
+                      Cartoons</li>
                 </Link>
             </ul>
         </nav>

@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Layout from '@/components/layout'
-import client from '@/modules/contentfulClient'
 import Img from '@/components/img'
 
 export default function Home({ data }) {
@@ -22,18 +21,4 @@ export default function Home({ data }) {
       </Layout>
     </>
   )
-}
-
-
-export async function getServerSideProps() {
-  try {
-      const data = await client.getEntries({ content_type: 'test' })
-    
-      return { props: { data: data.items[0] } }
-  } catch (err) {
-      console.log(err)
-      return {
-          notFound: true
-      }
-  }
 }
